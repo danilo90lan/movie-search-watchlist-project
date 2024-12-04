@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import ListMovies from "../component/ListMovies";
 
 export default function Home() {
     const [query, setQuery] = useState([]);
@@ -41,17 +42,8 @@ export default function Home() {
                 <button type="submit">Search</button>
             </form>
 
-
-            <ul>
-                {movies.map((movie, index) => {
-                    return <li key={index}>
-                        <p>{movie.Title}</p>
-                        <p>{movie.Year}</p>
-                        <img src={movie.Poster} />
-                    </li>
-                })
-                }
-            </ul>
+            <ListMovies movies = {movies}/>
+         
         </div>
     )
 }
