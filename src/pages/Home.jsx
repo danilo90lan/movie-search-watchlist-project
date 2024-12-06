@@ -32,29 +32,35 @@ export default function Home() {
 
 
     return (
-        <div>
-            <h1>Movie Search</h1>
+        <div className="container my-4">
+
+            <h1 className="text-center mb-4">Movie Search</h1>
+
             <form onSubmit={(event) => {
                 event.preventDefault();
                 fetchMovies()
             }
             }
             >
-                <input
-                    type="text"
-                    placeholder="Search for Movies...."
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    required />
+                <div className="text-center mb-4">
+                    <input
+                        type="text"
+                        placeholder="Search for Movies...."
+                        value={query}
+                        onChange={(event) => setQuery(event.target.value)}
+                        required />
 
-                <button type="submit">Search</button>
+                    <button type="submit" className="btn btn-primary">Search</button>
+                </div>
+
             </form>
 
-            <div>
+
+            <div className="row mt-4">
                 {
 
                     movies.map((movie, index) => (
-                        <ListMovies movie={movie} key={index} />
+                        <ListMovies movie={movie} key={movie.imbID} />
                     ))
 
                 }
@@ -63,5 +69,6 @@ export default function Home() {
 
 
         </div>
+
     )
 }
