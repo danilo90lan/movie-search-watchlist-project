@@ -66,8 +66,6 @@ export default function Home() {
 
                 }
             </div>
-            
-            <Link to ="/watchlist">WatchList</Link>
 
         </div>
 

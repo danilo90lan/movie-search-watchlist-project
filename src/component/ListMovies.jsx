@@ -5,7 +5,7 @@ export default function ListMovies(props) {
     const { addToWatchlist } = useWatchlist();
 
     return (
-        <div className="col-md-4 movie-card">
+        <div className="col-md-4 movie-card" style={{maxWidth: "18rem"}}>
             <h3>{movie.Title}</h3>
             <p>{movie.Year}</p>
             <img src={movie.Poster} alt={`${movie.Title} Poster`} />
