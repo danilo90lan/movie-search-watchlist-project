@@ -18,8 +18,16 @@ export default function Home() {
                     s: query.trim()
                 }
             });
-            setMovies(response.data.Search);
+            console.log(response);
+            if (response.data.Response === "True") {
+                setMovies(response.data.Search);
+            }
+            else {
+                alert("Movie not found!");
+            }
+
         }
+
     }
 
 
@@ -42,8 +50,18 @@ export default function Home() {
                 <button type="submit">Search</button>
             </form>
 
-            <ListMovies movies = {movies}/>
-         
+            <div>
+                {
+
+                    movies.map((movie, index) => (
+                        <ListMovies movie={movie} key={index} />
+                    ))
+
+                }
+            </div>
+
+
+
         </div>
     )
 }
