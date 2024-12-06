@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import ListMovies from "../component/ListMovies";
+import { Link } from "react-router-dom";
 
 export default function Home() {
     const [query, setQuery] = useState([]);
@@ -59,14 +60,14 @@ export default function Home() {
             <div className="row mt-4">
                 {
 
-                    movies.map((movie, index) => (
-                        <ListMovies movie={movie} key={movie.imbID} />
+                    movies.map((movie) => (
+                        <ListMovies movie={movie} key={movie.imdbID}/>
                     ))
 
                 }
             </div>
-
-
+            
+            <Link to ="/watchlist">WatchList</Link>
 
         </div>
 

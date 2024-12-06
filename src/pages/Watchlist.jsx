@@ -11,15 +11,16 @@ export default function Watchlist() {
                 <p>Your watchlist is empty. Add some movies.</p>
             ) : (
                 <ul>
-                    {watchlist.map((movie, index) => (
-                        <li key={index}>
-                            {movie.Title} ({movie.Year})
+                    {watchlist.map((movie) => (
+                        <li key={movie.imdbID}>
+                            <h2>{movie.Title}</h2> <p>{movie.Year}</p>
                             <img
                                 src={movie.Poster}
                                 alt={`${movie.Title} Poster`}
                             />
                             <button
                                 onClick={() => removeFromWatchlist(movie.imdbID)}
+                                style = {{color: "red"}}
                             >
                                 Remove
                             </button>

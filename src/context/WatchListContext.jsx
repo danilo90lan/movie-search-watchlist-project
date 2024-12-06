@@ -14,7 +14,7 @@ export default function WatchlistProvider({ children }) {
 
     // Delete from Watchlist function
     const removeFromWatchlist = (id) => {
-        setWatchlist((prev) => prev.filter((movie) => movie.id != id));
+        setWatchlist((prev) => prev.filter((movie) => movie.imdbID != id));
     };
 
 
