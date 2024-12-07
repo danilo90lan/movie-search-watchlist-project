@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import WatchlistProvider from "./context/WatchListContext";
 import Watchlist from "./pages/Watchlist";
 import Navbar from "./component/Navbar";
+import Details from "./pages/Details";
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/watchlist" element={<Watchlist/>} />
-          <Route path="/details/:id" element={<div>Details</div>} />
+          <Route path="/details/:id" element={<Details/>} />
         </Routes>
       </Router>
     </WatchlistProvider>

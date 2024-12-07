@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useWatchlist } from "../context/WatchListContext";
 
 export default function ListMovies(props) {
@@ -11,6 +12,7 @@ export default function ListMovies(props) {
             <img src={movie.Poster} alt={`${movie.Title} Poster`} />
             <button onClick={
                 () => addToWatchlist(movie)}> Add to WatchList</button>
+            <Link to = {`/details/${movie.imdbID}`} className="btn btn-primary">View Details</Link>
         </div>
 
 

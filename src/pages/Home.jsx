@@ -19,7 +19,7 @@ export default function Home() {
                     s: query.trim()
                 }
             });
-            console.log(response);
+
             if (response.data.Response === "True") {
                 setMovies(response.data.Search);
             }
