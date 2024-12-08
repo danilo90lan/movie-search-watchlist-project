@@ -1,6 +1,6 @@
 import React from "react";
 import { useWatchlist } from "../context/WatchListContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Watchlist() {
     const { watchlist, removeFromWatchlist } = useWatchlist();
@@ -21,6 +21,7 @@ export default function Watchlist() {
                                 src={movie.Poster}
                                 alt={`${movie.Title} Poster`}
                             />
+                            <Link to={`/details/${movie.imdbID}`} className="btn btn-primary">View Details</Link>
                             <button
                                 onClick={() => removeFromWatchlist(movie.imdbID)}
                                 style = {{color: "red"}}
