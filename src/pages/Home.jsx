@@ -46,6 +46,7 @@ export default function Home() {
                 <div className="text-center mb-4">
                     <input
                         type="text"
+                        name="movie"
                         placeholder="Search for Movies...."
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}

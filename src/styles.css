@@ -30,3 +30,15 @@ body {
 .plot {
     padding: 4rem;
 }
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transition: 2s;
+    border-radius: 20px;
+    background-color: green;
+    color: yellow;
+    padding: 20px;
+    z-index: 5;
+}
