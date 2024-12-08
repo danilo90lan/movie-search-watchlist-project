@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Details() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [movieDetails, setMovieDetails] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -42,6 +43,7 @@ export default function Details() {
 
     return (
         <div>
+            <button className="btn btn-secondary mb-3" onClick={() => navigate(-1)}>Go back</button>
             <div className="title">
                 <h2>{movieDetails.Title}</h2>
                 <p>{movieDetails.Year}</p>
